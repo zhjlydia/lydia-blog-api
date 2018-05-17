@@ -1,0 +1,41 @@
+{
+  "name": "lydia-blog-api",
+  "version": "1.0.0",
+  "main": "server/app.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon ./server/app"
+  },
+  "author": "zhjlydia",
+  "license": "MIT",
+  "dependencies": {
+    "kcors": "^2.2.1",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-compose": "^4.0.0",
+    "koa-compress": "^2.0.0",
+    "koa-generic-session": "^2.0.0",
+    "koa-json": "^2.0.2",
+    "koa-jwt": "^3.2.1",
+    "koa-logger": "^3.0.1",
+    "koa-multer": "^1.0.2",
+    "koa-passport": "^3.0.0-rc.2",
+    "koa-redis": "^3.0.0",
+    "koa-response-time": "^2.0.0",
+    "koa-router": "^7.1.1",
+    "lodash": "^4.17.4",
+    "markdown-it": "^8.3.2",
+    "mongoose": "^4.11.7",
+    "passport-github": "^1.1.0",
+    "qiniu": "^7.0.6",
+    "xss": "^0.3.3"
+  },
+  "devDependencies": {
+    "babel-plugin-espower": "^2.3.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015-node6": "^0.4.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.0"
+  }
+}

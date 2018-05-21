@@ -1,7 +1,6 @@
 'use strict'
 
 const path = require('path')
-const session = require('koa-generic-session')
 const responseTime = require('koa-response-time')
 const logger = require('koa-logger')
 const json = require('koa-json')//规范请求体中json格式
@@ -21,11 +20,11 @@ module.exports = function(app) {
   }))
   app.use(bodyParser())
   app.use(json())
-  app.keys = [config.session.secrets]
-  app.use(session({
-    key: 'jackblog.sid',
-    cookie: config.session.cookie
-  }))
+  // app.keys = [config.session.secrets]
+  // app.use(session({
+  //   key: 'jackblog.sid',
+  //   cookie: config.session.cookie
+  // }))
   app.use(passport.initialize())
   app.use(compress())
 }

@@ -6,6 +6,8 @@ const Koa=require("koa");
 const app=new Koa();
 const config=require("./config/index");
 require("./connect.js");
+require('./config/middleware')(app);
+
 
 app.listen(config.port,()=>{
     console.log('The server is running at http://localhost:' + config.port, app.env);

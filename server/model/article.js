@@ -53,4 +53,19 @@ var ArticleSchema = new Schema({
 		default: Date.now
 	}
 });
+
+ArticleSchema
+  .virtual('info')
+  .get(function() {
+    return {
+      '_id': this._id,
+      'title': this.title,
+      'content': this.content,
+      'images': this.images,
+      'visit_count': this.visit_count,
+      'comment_count':this.comment_count,
+      'like_count':this.like_count,
+      'publish_time': this.publish_time
+    }
+  })
 module.exports = mongoose.model('Article',ArticleSchema)

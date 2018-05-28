@@ -14,13 +14,13 @@ const Comment = mongoose.model('Comment')
  * @desc 前台获取文章列表
  */
 exports.getFrontArticleList = async(ctx, next) => {
-    let currrentPage = ctx.query.currrentPage > 0
-        ? ctx.query.currrentPage
+    let pageIndex = parseInt(ctx.query.pageIndex) > 0
+        ? parseInt(ctx.query.pageIndex)
         : 1;
-    let pageSize = ctx.query.pageSize > 0
-        ? ctx.query.pageSize
+    let pageSize = parseInt(ctx.query.pageSize) > 0
+        ? parseInt(ctx.query.pageSize)
         : 10;
-    let startRow = (currrentPage - 1) * pageSize;
+    let startRow = (pageIndex - 1) * pageSize;
     let sort = ctx.query.sortType || "publish_time";
     // let condition={}; if(ctx.query.tagId){     condition={}; }
     try {
